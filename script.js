@@ -18,12 +18,12 @@ async function converterMoedas(){
 
     
 
-    if(select.value === "US$ Dolar Americano"){
+    if(select.value === "dolar"){
     let valorEmDolares = inputValorReais / dolar
     inputMoedas.innerHTML= valorEmDolares.toLocaleString("en-US", {style: "currency", currency: "USD"})
     }
 
-    if(select.value === "€ Euro"){
+    if(select.value === "euro"){
         let valorEmEuros = inputValorReais/ euro
         inputMoedas.innerHTML=valorEmEuros.toLocaleString("de-DE", {style: "currency", currency: "EUR"})
     }
@@ -32,22 +32,23 @@ async function converterMoedas(){
 
     textoReal.innerHTML= inputValorReais.toLocaleString("pt-br",{style: "currency", currency: "BRL"})
 }
+
 function bandeira1() {       
     let textoMoedas1 = document.getElementById("texto-moedas1")
     let bandeiraMoedas1 = document.getElementById("bandeira-moedas1")
 
 
-    if (primeiro.value === "R$ Real Brasileiro") {
+    if (primeiro.value === "real") {
         textoMoedas1.innerHTML ="Real Brasileiro"
         bandeiraMoedas1.src ="imagem/brasil.png"
     }
 
-    if (primeiro.value === "€ Euro") {
+    if (primeiro.value === "euro") {
         textoMoedas1.innerHTML ="Euro"
         bandeiraMoedas1.src ="imagem/euro.png"
     }
 
-    if (primeiro.value === "US$ Dolar Americano") {
+    if (primeiro.value === "dolar") {
         textoMoedas1.innerHTML ="Dolar Americano"
         bandeiraMoedas1.src ="imagem/eua.png"
     }
@@ -58,15 +59,15 @@ function trocaDeMoeda(){
     let bandeiraMoedas = document.getElementById("bandeira-moedas")
 
 
-    if(select.value === "US$ Dolar Americano"){
+    if(select.value === "dolar"){
         textoMoedas.innerHTML ="Dolar Americano"
         bandeiraMoedas.src ="imagem/eua.png"
     }
-    if(select.value ==="€ Euro"){
+    if(select.value ==="euro"){
         textoMoedas.innerHTML ="Euro"
         bandeiraMoedas.src ="imagem/euro.png"
     }
-    if(select.value === "R$ Real Brasileiro"){
+    if(select.value === "real"){
         textoMoedas.innerHTML ="Real Brasileiro"
         bandeiraMoedas.src ="imagem/brasil.png"
     }
@@ -74,6 +75,6 @@ function trocaDeMoeda(){
     converterMoedas()
 }
 
-select.addEventListener("change", bandeira1)
+primeiro.addEventListener("change", bandeira1)
 botao.addEventListener("click", converterMoedas)
 select.addEventListener("change", trocaDeMoeda)
