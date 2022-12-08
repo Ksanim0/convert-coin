@@ -2,7 +2,7 @@ let input = document.getElementById("botao")
 let select = document.getElementById("select-moedas")
 let primeiro = document.getElementById("selectfirst") 
 const url = 'https://economia.awesomeapi.com.br/last/'
-const coin = 'USD-BRL,EUR-BRL,BTC-BRL'
+const coin = 'USD-BRL,EUR-BRL'
 
 
 async function converterMoedas(){
